@@ -3,9 +3,9 @@ Each `.jsonl` file contains a list of prompt-response pairs, one per line.
 
 ---
 
-## 🧠 ChatGPT Collaboration
+## 🧠 ChatGPT/Copilot Collaboration
 
-This dataset is being developed in collaboration with ChatGPT, using the following structured workflow:
+This dataset is being developed in collaboration with AI, using the following structured workflow:
 
 - Prompts and responses are generated interactively and reviewed in-session
 - Changes are issued as **separate pull requests**, one per logical unit of work
@@ -16,7 +16,7 @@ This dataset is being developed in collaboration with ChatGPT, using the followi
 
 ## 🧪 Token Context Management
 
-In conversations with ChatGPT:
+In conversations with an agent:
 - Typing `##DISCARD FROM HERE##` indicates that all prior conversation context can be deprioritized or purged from memory
 - This helps manage long sessions within token limits (128k context)
 
