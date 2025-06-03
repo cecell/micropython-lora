@@ -1,0 +1,114 @@
+# MicroPython LoRA Dataset Project: Best Practices Summary
+
+This document serves as a persistent guide for working with ChatGPT on the MicroPython LoRA dataset project. It can be reused with any future instance of ChatGPT to maintain continuity, quality, and structure.
+
+---
+
+## 🎯 Project Purpose
+
+To generate high-quality, human-readable, and LLM-trainable MicroPython prompts and responses organized by category (e.g., GPIO, I2C, WiFi). These will be used to fine-tune or augment a base language model using a LoRA (Low-Rank Adaptation) approach.
+
+---
+
+## 📁 File Organization Guidelines
+
+* **One file per category** (e.g., `gpio_digital_io.jsonl`) is preferred for simplicity.
+* Do **not split** files until prompt count becomes difficult to manage (>500 entries).
+* Use `jsonl` format for compatibility with most LoRA training pipelines.
+
+---
+
+## 🔄 Versioning & Updates
+
+* If using GitHub, push one **Pull Request per change** when possible.
+* In PRs, include a **transcript or summary of the ChatGPT conversation** that led to the change.
+* Use commit messages like:
+
+  * `Add 20 new prompts for GPIO input`
+  * `Refactor debounce example with ticks_ms()`
+
+---
+
+## 💡 Prompt Generation Best Practices
+
+### ✅ Include When:
+
+* Prompt touches a **hardware-specific behavior or quirk** (e.g. GPIO0 on ESP8266).
+* Code depends on **timing or states** (e.g., debounce, toggling).
+* MicroPython APIs behave differently from CPython (e.g. `.value()` vs `.on()`).
+
+### ❌ Avoid When:
+
+* Prompt is extremely simple (e.g., `led.on()`)
+* Including a note would distract from the clarity of the code block
+
+### Suggested Prompt Format
+
+```json
+{
+  "prompt": "How do I debounce a button in MicroPython?",
+  "response": "...code example...",
+  "note": "Mechanical buttons often produce multiple signals when pressed. Software debounce avoids multiple triggers."
+}
+```
+
+---
+
+## 🧠 Prompt Quality Checklist
+
+* [x] Code is valid and runs without error on typical MicroPython boards
+* [x] Response includes clear variable names and short explanations
+* [x] Avoids unnecessary complexity
+* [x] Adds value with tips/warnings where needed
+* [x] No repeated prompts unless testing variation
+
+---
+
+## 🔍 Validation
+
+If additional models or tools are used (e.g., Copilot), ChatGPT should:
+
+* Review the external responses
+* Improve them for reliability, usability, and clarity
+* Optionally compare to internally generated responses
+
+---
+
+## 📚 Suggested Dataset Fields
+
+| Field    | Description                                 |
+| -------- | ------------------------------------------- |
+| prompt   | The natural language question or task       |
+| response | The complete and accurate answer with code  |
+| note     | Optional; warning, clarification, or advice |
+| tags     | Optional; e.g., `gpio`, `debounce`, `input` |
+
+---
+
+## 📌 Project Communication Principles
+
+* Be concise but thorough
+* Use numbered lists or tables when appropriate
+* Include real examples from experience when possible
+* Don’t assume a beginner knows hardware edge cases
+* Favor working code that fails safely
+
+---
+
+## ✅ Deployment Readiness
+
+Before a file is used to train or fine-tune a model:
+
+* Run a review pass using ChatGPT or another assistant
+* Check for duplicate prompts or answers
+* Confirm dataset adheres to schema and quality standards
+
+---
+
+## 💬 Phrase to Start a Fresh Instance
+
+> "This project involves building a LoRA dataset for MicroPython code prompts and responses. Please follow the best practices outlined in this summary document."
+
+---
+
+This doc can grow with the project — feel free to update versioning rules, structure fields, or quality gates as needed.
