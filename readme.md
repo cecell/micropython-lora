@@ -3,25 +3,6 @@ Each `.jsonl` file contains a list of prompt-response pairs, one per line.
 
 ---
 
-## 🧠 ChatGPT/Copilot Collaboration
-
-This dataset is being developed in collaboration with AI, using the following structured workflow:
-
-- Prompts and responses are generated interactively and reviewed in-session
-- Changes are issued as **separate pull requests**, one per logical unit of work
-- PR descriptions may include quotes or transcripts from conversations for context
-- All responses are optionally validated against [MicroPython Documentation](https://docs.micropython.org/en/latest/)
-
----
-
-## 🧪 Token Context Management
-
-In conversations with an agent:
-- Typing `##DISCARD FROM HERE##` indicates that all prior conversation context can be deprioritized or purged from memory
-- This helps manage long sessions within token limits (128k context)
-
----
-
 ## 🚀 How to Use This Repo
 
 If you're using this as a base for your own fine-tuning:
