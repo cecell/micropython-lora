@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## Operational Readiness
-  This is to be read at the beginning of an instance. This document serves as a persistent guide for working with Codex or ChatGPT on the MicroPython LoRA dataset project. It can be reused with any future instance of Codex or ChatGPT to maintain continuity, quality, and structure.
+  This document should be read at the start of each instance. It serves as a persistent guide for working with Codex or ChatGPT on the MicroPython LoRA dataset project. Reuse it with any future instance to maintain continuity, quality, and structure.
 
   At that time, the agent must:
     - Ask questions and seek clarification where ambiguity exists.
